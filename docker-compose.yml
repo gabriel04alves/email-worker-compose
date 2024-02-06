@@ -43,8 +43,10 @@ services:
       - web
       - fila
     depends_on:
-      - db
+      - db 
       - queue
+    environment:
+      - DB_NAME=email_sender
   queue: 
     image: redis:3.2
     networks:
